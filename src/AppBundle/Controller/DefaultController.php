@@ -32,7 +32,7 @@ class DefaultController extends Controller
 	
 		//print_r($response);
 	
-		return $this->render ( 'default/index.html.twig', array (
+		return $this->render ( 'Main/index.html.twig', array (
 				'response' => $response
 		) );
 	}
@@ -70,7 +70,7 @@ class DefaultController extends Controller
 		}
 		//print_r($value['_source']);
 		$rezult1=$value['_source'];
-		return $this->render ( 'default/index_single.html.twig',
+		return $this->render ( 'Main/index_single.html.twig',
 				array(
 						'url_key' => $url_key,
 						'rezult' =>$rezult1
@@ -100,7 +100,7 @@ class DefaultController extends Controller
 		);
 		//print_r($products);
 		$response = $client->search($params);
-		return $this->render('default/puokstes.html.twig', [
+		return $this->render('Main/puokstes.html.twig', [
 				'response' => $response,
 		]);
 	}
@@ -126,7 +126,7 @@ class DefaultController extends Controller
 				)
 		);
 		$response = $client->search($params);
-		return $this->render('default/gimtadienio_puokstes.html.twig', [
+		return $this->render('Main/gimtadienio_puokstes.html.twig', [
 				'response' => $response,
 		]);
 	}
@@ -152,7 +152,7 @@ class DefaultController extends Controller
 				)
 		);
 		$response = $client->search($params);
-		return $this->render('default/populiariausios.html.twig', [
+		return $this->render('Main/populiariausios.html.twig', [
 				'response' => $response,
 		]);
 	}
@@ -178,7 +178,7 @@ class DefaultController extends Controller
 				)
 		);
 		$response = $client->search($params);
-		return $this->render('default/skintos_geles.html.twig', [
+		return $this->render('Main/skintos_geles.html.twig', [
 				'response' => $response,
 		]);
 	}
@@ -204,7 +204,7 @@ class DefaultController extends Controller
 				)
 		);
 		$response = $client->search($params);
-		return $this->render('default/akcijos.html.twig', [
+		return $this->render('Main/akcijos.html.twig', [
 				'response' => $response,
 		]);
 	}
@@ -230,7 +230,7 @@ class DefaultController extends Controller
 				)
 		);
 		$response = $client->search($params);
-		return $this->render('default/rozes.html.twig', [
+		return $this->render('Main/rozes.html.twig', [
 				'response' => $response,
 		]);
 	}
