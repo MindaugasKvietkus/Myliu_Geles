@@ -1,4 +1,4 @@
-
+<?
 namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -38,7 +38,7 @@ class DefaultController extends Controller
 	}
 	
 	/**
-	 * @Route("/rrrrrrrrrrrrrr{url_key}")
+	 * @Route("/{url_key}")
 	 */
 	
 	public function getDocument($url_key){
