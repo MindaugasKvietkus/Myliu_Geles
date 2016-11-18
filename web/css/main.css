@@ -1,0 +1,276 @@
+/*-----------------------------------------------------------------------------
+[emotion.lt]
+version:   0.1
+date:      2016/09/10
+-----------------------------------------------------------------------------*/
+@font-face {
+    font-family: 'Roboto;
+    url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic,cyrillic-ext,greek-ext,greek,vietnamese);
+    url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext,cyrillic-ext,cyrillic,greek-ext,greek,vietnamese);
+    url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&subset=latin,latin-ext,greek-ext,greek,vietnamese,cyrillic,cyrillic-ext);
+}
+
+body {
+    margin: 0;
+    font-size: 0;
+    min-width: 220px;
+    font-family: 'Roboto';
+}
+
+img {
+    border: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #ffcc00;
+    -webkit-box-shadow: 0px 1px 10px #a6acaf;
+    -moz-box-shadow: 0px 1px 10px #a6acaf;
+    -o-box-shadow: 0px 1px 10px #a6acaf;
+    box-shadow: 0px 1px 10px #a6acaf;
+}
+
+a:link,
+a:visited,
+a:active, {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+*:focus {
+    outline: none;
+}
+
+/* ==========================================================================
+   Navigation Bar
+   ========================================================================== */
+
+nav .menu {
+    width: 50px;
+    height: 60px;
+    cursor: pointer;
+    display: block;
+}
+
+nav .open,
+nav .menu:hover {
+    background-color: #fff;
+}
+
+nav .menu:hover button .line-top,
+nav .menu:hover button .line-middle,
+nav .menu:hover button .line-bottom {
+    background-color: #ffa200;
+}
+
+nav button {
+    position: fixed;
+    display: block;
+    top: 23px;
+    margin-left: 15px;
+    width: 20px;
+    height: 15px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+nav button .line-top,
+nav button .line-middle,
+nav button .line-bottom {
+    position: absolute;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    -webkit-border-radius: 7em;
+    -moz-border-radius: 7em;
+    -o-border-radius: 7em;
+    border-radius: 7em;
+}
+
+nav button .line-top {
+    top: 0;
+}
+
+nav button .line-middle {
+    top: 0;
+    margin-top: 6px;
+}
+
+nav button .line-bottom {
+    top: 0;
+    margin-top: 12px;
+}
+
+.slider {
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #ffcc00;
+    height: 0px;
+    overflow: hidden;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.slider li {
+    position: relative;
+    left: -40px;
+    width: 100%;
+    padding: 10px 15px;
+    cursor: pointer;
+    display: block;
+}
+
+.slider li:hover {
+    background-color: #ffa200;
+}
+
+.slider a {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+}
+
+nav .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -57px;
+    margin-top: -10px;
+}
+
+svg {
+    fill: #fff;
+    fill-rule: evenodd;
+}
+
+nav .cart {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -10px;
+    margin-right: 22px;
+}
+
+nav .basket {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -23px;
+    margin-right: -9px;
+    display: block;
+    width: 17px;
+    height: 17px;
+    border-radius: 50px;
+    font-size: 12px;
+    color: #ffcc00;
+    line-height: 17px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    background: #fff;
+}
+
+nav .cart:hover .basket,
+nav .basket:hover {
+    cursor: pointer;
+    background-color: deeppink;
+    color: #fff;
+}
+
+/* ==========================================================================
+   Product List Home page
+   ========================================================================== */
+
+.main-container {
+    margin-top: 87px;
+}
+
+.main-container .listBox {
+    text-align: center;
+}
+
+.main-container .listBox .productList {
+    width: 146px;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #e5e5e5;
+    border-bottom: 1px solid #ffd488;
+    margin: 7px 4px;
+}
+
+.main-container .listBox .productList img {
+	width: 100%;
+}
+
+.main-container .listBox .productList h3 {
+    font-size: 12px;
+    color: #404040;
+    text-align: left;
+    margin-left: 5px;
+    font-weight: 300;
+}
+
+.main-container .listBox .productList .price {
+    text-align: left;
+}
+
+.main-container .listBox .productList .price .newPrice,
+.main-container .listBox .productList .price .oldPrice {
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 5px;
+    display: inline-block;
+}
+
+.main-container .listBox .productList .price .newPrice {
+    color: #9e0b0f;
+}
+
+.main-container .listBox .productList .price .oldPrice {
+    color: #000;
+    text-decoration: line-through;
+}
+
+.main-container .listBox .productList button {
+    background-color: #ffa200;
+    height: 29px;
+    width: 100%;
+    border: none;
+    border-top: 1px solid #ffd488;
+    margin-top: 13px;
+    font-size: 8px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+}
+.main-container .listBox .productList button:hover {
+    background-color: #ffcc00;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media (max-width: 220px) {
+    .main-container .productBox .productList {
+        display: block;
+        width: 100%;
+    }
+}

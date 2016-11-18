@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+       <div class="main-container">
+        <div class="listBox">
+        {% for value in response.hits.hits %}
+            <a href="
+            {% if value._source.url_key is defined and value._source.url_key is not empty %}
+        {{ value._source.url_key }}
+        {% else %}
+                    -----
+                    {% endif %}">
+                <div class="productList">
+                    <img src="http://www.myliugeles.lt/media/catalog/product{{ value._source.small_image }}" alt="{{ value._source.name }}">
+                    <h3>{% if value._source.name is defined and value._source.name is not empty %}
+                    {{ value._source.name }}
+                    {% else %}
+                    -----
+                    {% endif %}</h3>
+                    <div class="price">
+                        <div class="newPrice">&euro; 
+                    {% if value._source.price is defined and value._source.price is not empty %}    
+                    {{ value._source.price|number_format(2, '.', ',') }}
+                    {% else %}
+                    -----
+                    {% endif %}
+                    </div>
+                        <div class="oldPrice">&euro; 49.95</div>
+                    </div>
+                    <button type="button">plačiau</button>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

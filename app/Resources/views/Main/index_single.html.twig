@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+{% block specificCss %}
+<link href={{ asset('css/product.css') }} rel="stylesheet"/>
+{% endblock %}
+{% block body %}
+{% if url_key==url_key %}
+<div class="product-container">
+            <div class="productBox">
+                <img src="http://www.myliugeles.lt/media/catalog/product{{ rezult.small_image }}" alt=
+                {% if rezult.name is defined and rezult.name is not empty %} 
+                {{ rezult.name }}
+                {% else %}
+                    ------
+                    {% endif %}>
+                <div class="price">
+                <div><p>&euro;</p>
+                <div id="hidden" style="display: none;">
+                    {% if rezult.price is defined and rezult.price is not empty %} 
+                    {{ rezult.price|number_format(2, '.', ',') }}
+                    {% else %}
+                    ------
+                    {% endif %}
+                    </div>
+                    </div>
+                    <div class="newPrice" id="demo" name="kaina">&euro; 
+                    {% if rezult.price is defined and rezult.price is not empty %} 
+                    {{ rezult.price|number_format(2, '.', ',') }}
+                    {% else %}
+                    ------
+                    {% endif %}
+                    </div>
+                    <div class="oldPrice">&euro; 49.95</div>
+                </div>
+                <h1>
+                {% if rezult.name is defined and rezult.name is not empty %} 
+                    {{ rezult.name }}
+                {% else %}
+                    ------
+                    {% endif %}</h1>
+                    <form>
+                <div class="selectBox">
+                    <select title="asirinkite dydį" id="pasirinkimas">
+                        <option selected="selected">Pasirinkite dydį</option>
+                        <option name="vidutine" value="0" onclick="myFunction()">Vidutinė</option>
+                        <option name="didesne" value="
+                        {% for key, value in rezult._custom_option_row_price %}
+                    {% if key==0 %}
+                    {{ value|number_format(2, '.', ',') }}
+                    {% endif %}
+                    {% endfor %}
+                        " onclick="myFunction()">Didesnė +
+                        {% for key, value in rezult._custom_option_row_price %}
+                    {% if key==0 %}
+                    {{ value|number_format(2, '.', ',') }}
+                    {% endif %}
+                    {% endfor %}
+                        </option>
+                        <option name="didele" value="
+                        {% for key, value in rezult._custom_option_row_price %}
+                    {% if key==1 %}
+                    {{ value|number_format(2, '.', ',') }}
+                    {% endif %}
+                    {% endfor %}
+                        " onclick="myFunction()">Didelė +
+                        {% for key, value in rezult._custom_option_row_price %}
+                    {% if key==1 %}
+                    {{ value|number_format(2, '.', ',') }}
+                    {% endif %}
+                    {% endfor %}</option>
+                    </select>
+                
+                </div>
+                <div class="description">
+                {% if rezult.description is defined and rezult.description is not empty %} 
+                {{ rezult.description }}
+                {% else %}
+                    ------
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+  
+<script type="text/javascript">
+function myFunction() {
+	var pagrindinekaina = document.getElementById('hidden').innerHTML;
+    var pridedamojikaina = document.getElementById("pasirinkimas").value;
+    var rezultpagrkaina = Number(pagrindinekaina);
+    var rezultpridkaina = Number(pridedamojikaina)
+    var rezult = rezultpagrkaina + rezultpridkaina;
+    document.getElementById("demo").innerHTML = "&euro; " + rezult.toPrecision(4);
+}
+
+</script>
+{% endif %}
+{% include 'include/product_footer.php' %}
+{% endblock %}

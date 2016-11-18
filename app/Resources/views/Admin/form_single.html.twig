@@ -1,0 +1,108 @@
+{% extends 'admin.html.twig' %}
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+{% block content %}
+{{ form_start(form, {'class': 'form-inline col-md-8'}) }}
+<div class="col-md-12">
+	<div class="form-group">
+		<label class="col-md-3">{{ form_label(form.sku) }}</label> <label
+			class="col-md-9">{{ form_widget(form.sku) }}</label>
+	</div>
+	<div class="form-group">
+		<label class="col-md-3">{{ form_label(form._category_id) }}</label> <label
+			class="col-md-9">{{ form_widget(form._category_id) }}</label>
+	</div>
+	<div class="form-group">
+		<label class="col-md-3">{{ form_label(form._product_websites) }}</label>
+		<label class="col-md-9">{{ form_widget(form._product_websites) }}</label>
+	</div>
+	<div class="form-group">
+		<label class="col-md-3">{{ form_label(form.description) }}</label> <label
+			class="col-md-9">{{ form_widget(form.description) }}</label>
+	</div>
+	<div class="form-group">
+		<label class="col-md-3">{{ form_label(form.image) }}</label> <label
+			class="col-md-9">{{ form_widget(form.image) }}</label>
+	</div>
+	<div class="form-group">
+		<label class="col-md-3">{{ form_label(form.meta_description) }}</label>
+		<label class="col-md-9">{{ form_widget(form.meta_description) }}</label>
+	</div>
+	<div class="form-group">
+		<label class="col-md-3">{{ form_label(form.name) }}</label> <label
+			class="col-md-9">{{ form_widget(form.name) }}</label>
+	</div>
+	<div class="form-group">
+		<label class="col-md-3">{{ form_label(form.short_description) }}</label>
+		<label class="col-md-9">{{ form_widget(form.short_description) }}</label>
+	</div>
+	<div class="form-group">
+		<label class="col-md-3">{{ form_label(form.small_image) }}</label> <label
+			class="col-md-9">{{ form_widget(form.small_image) }}</label>
+	</div>
+	<div class="form-group">
+		<label class="col-md-3">{{ form_label(form.thumbnail) }}</label> <label
+			class="col-md-9">{{ form_widget(form.thumbnail) }}</label>
+	</div>
+	<div class="form-group">
+		<label class="col-md-3">{{ form_label(form.url_key) }}</label> <label
+			class="col-md-9">{{ form_widget(form.url_key) }}</label>
+	</div>
+	<div class="form-group">
+		<label class="col-md-3">{{ form_label(form.url_path) }}</label> <label
+			class="col-md-9">{{ form_widget(form.url_path) }}</label>
+	</div>
+	<div class="form-group">
+		<label class="col-md-3">{{ form_label(form._media_image) }}</label> <label
+			class="col-md-9">{{ form_widget(form._media_image) }}</label>
+	</div>
+	<div class="form-group">
+		<label class="col-md-3">{{ form_label(form.price) }}</label> <label
+			class="col-md-9">{{ form_widget(form.price) }}</label>
+	</div>
+	<div class="form-group col-md-12">
+		<div>
+			<label class="col-md-6" style="text-align: center;">Produkto
+				dydis</label> <label class="col-md-6" style="text-align: center;">Produkto
+				kaina</label>
+		</div>
+		<div>
+			<label class="col-md-1 plotis">Default</label> <label
+				class="col-md-1 plotis">LTU</label> <label class="col-md-1 plotis">EN</label>
+			<label class="col-md-1 plotis">RU</label> <label
+				class="col-md-1 plotis">Default</label> <label
+				class="col-md-1 plotis">LTU</label> <label class="col-md-1 plotis">EN</label>
+			<label class="col-md-1 plotis">RU</label>
+		</div>
+		<div class="form-group">
+			<label class="col-md-1 plotis">{{ form_widget(form.didesnes_default_dydis_0) }}</label>
+			<label class="col-md-1 plotis">{{ form_widget(form.ltu_didesnes_dydis_2) }}</label>
+			<label class="col-md-1 plotis">{{ form_widget(form.en_didesnes_dydis_4) }}</label>
+			<label class="col-md-1 plotis">{{ form_widget(form.ru_didesnes_dydis_6) }}</label>
+			<label class="col-md-1 plotis">{{ form_widget(form.didesnes_default_kaina_0) }}</label>
+			<label class="col-md-1 plotis">{{ form_widget(form.ltu_didesnes_kaina_2) }}</label>
+			<label class="col-md-1 plotis">{{ form_widget(form.en_didesnes_kaina_4) }}</label>
+			<label class="col-md-1 plotis">{{ form_widget(form.ru_didesnes_kaina_6) }}</label>
+		</div>
+		<div class="form-group">
+			<label class="col-md-1 plotis">{{ form_widget(form.dideles_default_dydis_1) }}</label>
+			<label class="col-md-1 plotis">{{ form_widget(form.ltu_dideles_dydis_3) }}</label>
+			<label class="col-md-1 plotis">{{ form_widget(form.en_dideles_dydis_5) }}</label>
+			<label class="col-md-1 plotis">{{ form_widget(form.ru_dideles_dydis_7) }}</label>
+			<label class="col-md-1 plotis">{{ form_widget(form.dideles_default_kaina_1) }}</label>
+			<label class="col-md-1 plotis">{{ form_widget(form.ltu_dideles_kaina_3) }}</label>
+			<label class="col-md-1 plotis">{{ form_widget(form.en_dideles_kaina_5) }}</label>
+			<label class="col-md-1 plotis">{{ form_widget(form.ru_dideles_kaina_7) }}</label>
+		</div>
+	</div>
+	<div>
+		<label style="float: right;">{{ form_widget(form.update) }}</label>
+	</div>
+</div>
+<div class="input_errors">
+	{{ form_errors(form.sku) }}
+</div>
+<div style="display: none;">
+	{{ form_rest(form) }}
+</div>
+{{ form_end(form) }}
+{% endblock %}

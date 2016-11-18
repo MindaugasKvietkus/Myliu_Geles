@@ -1,0 +1,22 @@
+<table border="1">
+	<tr>
+		<th>Sku</th>
+		<th>Pavadinimas</th>
+		<th>Kaina</th>
+		<th>_category</th>
+		<th>Veiksmas</th>
+	</tr>
+
+	{% for value in response.hits.hits %}
+	<tr>
+		<td>{{ value._source.sku }}</td>
+		<td>{{ value._source.name| default('') }}</td>
+		<td>{{ value._source.price| default('') }}</td>
+		<td>{% if value._source._category is defined and value._source._category is not empty %}
+			{% for value2 in value._source._category %} {{ value2 }} {% endfor %}
+			{% else %} ---- {% endif %}</td>
+		<td><a href="/admin/form/{{ value._source.sku }}">Redaguoti</a></td>
+	</tr>
+	{% endfor %}
+
+</table>
