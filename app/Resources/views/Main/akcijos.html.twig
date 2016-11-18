@@ -4,7 +4,12 @@
        <div class="main-container">
         <div class="listBox">
         {% for value in response.hits.hits %}
-            <a href="/{{ value._source.sku }}">
+            <a href="
+            {% if value._source.url_key is defined and value._source.url_key is not empty %}
+        /{{ value._source.url_key }}
+        {% else %}
+                    -----
+                    {% endif %}">
                 <div class="productList">
                     <img src="http://www.myliugeles.lt/media/catalog/product{{ value._source.small_image }}" alt="Pavasariškas tulpių ir frezijų derinys">
                     <h3>{% if value._source.name is defined and value._source.name is not empty %}
