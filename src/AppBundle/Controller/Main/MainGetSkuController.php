@@ -42,7 +42,7 @@ class MainGetSkuController extends Controller
 		}
 		//print_r($value['_source']);
 		$rezult1=$value['_source'];
-		return $this->render ( 'default/index_single.html.twig',
+		return $this->render ( 'Main/index_single.html.twig',
 				array(
 						'url_key' => $url_key,
 						'rezult' =>$rezult1

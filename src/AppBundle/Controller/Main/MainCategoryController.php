@@ -82,7 +82,7 @@ class MainCategoryController extends Controller
 				)
 		);
 		$response = $client->search($params);
-		return $this->render('default/Main.html.twig', [
+		return $this->render('Main/populiariausios.html.twig', [
 				'response' => $response,
 		]);
 	}
